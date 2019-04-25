@@ -1,2 +1,2 @@
 # LSTM
-Long Short-Term Memory Prediction
+Long Short-Term Memory Prediction for Power Load
