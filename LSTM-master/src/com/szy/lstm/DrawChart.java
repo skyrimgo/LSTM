@@ -8,7 +8,7 @@ public class DrawChart {
         JFrame frame = new JFrame("LSTM预测图");
         frame.setLayout(new GridLayout(1, 2, 10, 10));
         frame.add(new TimeSeriesChart(y_pre, res_recur).getChartPanel()); // 添加折线图
-        frame.setBounds(50, 50, 800, 600);
+        frame.setBounds(50, 50, 1080, 720);
         frame.setVisible(true);
     }
 }

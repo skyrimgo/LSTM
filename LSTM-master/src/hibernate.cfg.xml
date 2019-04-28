@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<!-- 第一部分：配置数据库信息 -->
+	<session-factory>
+		<property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/javadata?serverTimezone=GMT%2B8&amp;useSSL=false</property>
+		<property name="hibernate.connection.username">shenziyao</property>
+		<property name="hibernate.connection.password">960206ash</property>
+
+		<!-- 第二部分：配置hibernate信息 可选 -->
+		<!-- 输出底层的sql语句 -->
+		<property name="hibernate.show_sql">true</property>
+		<!-- 输出底层的sql语句格式 -->
+		<property name="hibernate.format_sql">true</property>
+		<!-- hibernate帮创建表，需要配置之后 -->
+		<!-- update:如果已经有表，更新；若没有，创建 -->
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		<!-- 配置数据库方言 在mysql里面实现分页 关键字limit,只能使用mysql里面 在oracle数据库，实现分页rownum 让hibernate框架识别不同数据库的语句 -->
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		<!-- 在hibernate核心配置文件中配置 -->
+		<property name="hibernate.current_session_context_class">thread</property>
+		<!-- 第三部分 把映射文件放到核心配置文件中 -->
+		<mapping resource="com/szy/entity/Data.hbm.xml" />
+
+	</session-factory>
+</hibernate-configuration>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <!-- 1 配置类和表对应 class标签 name属性：实体类全路径 table属性 ：数据库表名称 -->
+    <class name="com.szy.entity.Data" table="t_data">
+        <!-- 2 配置实体类id和表id对应 hibernate要求实体类有一个属性唯一值 hibernate要求表有字段作为唯一值 -->
+        <!-- id标签 name属性：实体类里面id属性名称 column属性：生成的表字段名称 -->
+        <id name="d_id" column="d_id">
+            <!-- 设置数据库id增长策略 native:生成表id值就是主键自动增长 -->
+            <generator class="native"></generator>
+        </id>
+        <!-- 配置其他属性和表字段对应 name属性：实体类里面id属性名称 column属性：生成的表字段名称 -->
+        <property name="d_data" column="d_data"></property>
+    </class>
+</hibernate-mapping>

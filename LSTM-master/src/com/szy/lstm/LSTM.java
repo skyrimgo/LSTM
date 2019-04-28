@@ -264,8 +264,9 @@ public class LSTM {
 
 		// input
 		// double[] y = { 1, 0.6, 0.3, -0.5 };
-		DataRead dataRead = new DataRead("test.txt");// datafile
-		double[] y_pre = dataRead.getData();
+		// DataRead dataRead = new DataRead("test.txt");// datafile
+		// double[] y_pre = dataRead.getData();
+		double[] y_pre = SQLRead.getData();
 		double fix = Arrays.stream(y_pre).sum() / y_pre.length;
 		Normalization normalization = new Normalization();
 		double[] y = normalization.dataProcess(y_pre, fix);
@@ -301,7 +302,7 @@ public class LSTM {
 				for (int i = 0; i < y.length; ++i) {
 					res_recur[i] = Double.parseDouble(predict_recur[i]);
 				}
-				DrawChart.drawChart(y_pre,res_recur);
+				DrawChart.drawChart(y_pre, res_recur);
 			}
 			System.out.print("y_pred_recur = [" + String.join(",", predict_recur) + "], ");
 			double loss = lstm.y_list_is(y, new ToyLossLayer());
