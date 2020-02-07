@@ -8,4 +8,4 @@ Establishment of LSTM Long-term and Short-term Neural Network for Prediction
 
 Introducing random factor variables to prevent falling into local optimum
 
-![image](https://github.com/skyrimgo/LSTM/raw/master/LSTM-master/res.png)
+![image](https://github.com/skyrimgo/LSTM/raw/master/LSTM-master/res.png?raw=true)
